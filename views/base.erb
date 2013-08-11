@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Keyper</title>
+  <meta name="description" content="Bootstrap Bootstrap 3 boxed with template">
+  <meta name="keywords" content="Bootstrap,bootstrap 3, layout, boxed, template ">
+  <meta name="google-site-verification" content="MIaHKEqspbaoI62kQsOLavc6RdqMZtpkmoYNrpqzhqs"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="css/bootstrap.css" rel="stylesheet">
+
+
+  <link rel="shortcut icon" href="/bootstrap/img/favicon.ico">
+  <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+
+
+  <style type="text/css" id="bsCss">
+          /* override bootstrap styles */
+      * {
+          -webkit-box-sizing: boreder-box;
+          -moz-box-sizing: boreder-box;
+      }
+
+          /* Sticky footer styles
+          -------------------------------------------------- */
+
+      html,
+      body {
+          height: 100%;
+          /* The html and body elements cannot have any padding or margin. */
+      }
+
+          /* Wrapper for page content to push down footer */
+      #wrap {
+          min-height: 100%;
+          height: auto !important;
+          height: 100%;
+          /* Negative indent footer by its height */
+          margin: 0 auto -60px;
+          /* Pad bottom by footer height */
+          padding: 0 0 60px;
+      }
+
+          /* Set the fixed height of the footer here */
+      #footer {
+          height: 60px;
+          background-color: #f5f5f5;
+
+      }
+
+          /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+          #footer {
+              margin-left: -20px;
+              margin-right: -20px;
+              padding-left: 20px;
+              padding-right: 20px;
+          }
+      }
+
+          /* Custon styles */
+      .jumbotron {
+          padding-top: 80px;
+
+      }
+
+      i {
+          background: none;
+      }
+
+
+  </style>
+</head>
+<body>
+<!-- Wrap all page content here -->
+<div id="wrap">
+
+  <!-- CONTENT
+  =================================-->
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <div class="row">
+        <div class="col col-lg-12 col-sm-12">
+
+          <h1><img src="img/glyphicons_044_keys.png" height="45px"> Keyper</h1>
+
+          <p>SSH Key Management Service</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- /header container-->
+
+  <!-- CONTENT
+  =================================-->
+  <div class="container">
+
+    <div class="row">
+      <div class="col col-lg-12">
+        <div class="well">
+
+          <table class="table">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>Username</th>
+              <th>Title</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Keys</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <% @personList.each do |person| %>
+                <tr>
+                  <td><%= person['id'] %></td>
+                  <td><%= person['userName'] %></td>
+                  <td><%= person['jobTitle'] %></td>
+                  <td><%= person['firstName'] %></td>
+                  <td><%= person['lastName'] %></td>
+
+                  <td>
+
+                    <a href="#" class="btn btn-primary" data-toggle="popover" data-placement="right" data-html="true" data-content="
+                <% if person['keyList'].length != 0 %>
+                <ul>
+                    <% person['keyList'].each do |key| %>
+                    <li><%= key['name'] %>: <%= key['key'] %></li>
+                    <% end %>
+                </ul>
+                <% else %>
+                    No Keys Found.
+                <% end %>
+                " title="" data-original-title="User Keys">Keys</a>
+
+                  </td>
+
+                </tr>
+            <% end %>
+
+            </tbody>
+
+
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /CONTENT
+  =================================-->
+</div>
+<!-- end: Wrap all page content here -->
+
+<!-- Footer
+=================================-->
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <p class="text-muted"><a href="https://github.com/lacion/keyper">Keyper</a>
+        <a href="https://github.com/lacion">Luis Morales</a>.</p>
+    </div>
+  </div>
+</div>
+<!-- /Footer
+=================================-->
+
+<script type='text/javascript' src="/js/jquery.js"></script>
+<script type='text/javascript' src="/js/bootstrap.js"></script>
+
+<script type='text/javascript'>
+    $(document).ready(function () {
+        $('.btn').popover();
+    });
+</script>
+
+
+</body>
+</html>
