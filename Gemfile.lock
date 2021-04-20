@@ -12,8 +12,8 @@ GEM
     mime-types (1.23)
     puma (2.5.0)
       rack (>= 1.1, < 2.0)
-    rack (1.5.2)
-    rack-protection (1.5.0)
+    rack (1.6.13)
+    rack-protection (1.5.5)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
