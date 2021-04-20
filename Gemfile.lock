@@ -8,7 +8,7 @@ GEM
     coderay (1.0.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    json (1.8.0)
+    json (2.3.0)
     mime-types (1.23)
     puma (2.5.0)
       rack (>= 1.1, < 2.0)
