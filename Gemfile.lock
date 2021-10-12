@@ -10,9 +10,10 @@ GEM
     eventmachine (1.0.3)
     json (1.8.0)
     mime-types (1.23)
-    puma (2.5.0)
-      rack (>= 1.1, < 2.0)
-    rack (1.5.2)
+    nio4r (2.5.8)
+    puma (4.3.9)
+      nio4r (~> 2.0)
+    rack (1.6.13)
     rack-protection (1.5.0)
       rack
     rack-test (0.6.2)
